@@ -1,0 +1,564 @@
+[
+  {
+    "case_id": "custom_case_01",
+    "email": "elena.rostova@gmail.com",
+    "requested_at": "2026-09-18T10:15:00Z",
+    "reported_status": "NOT_STARTED",
+    "reported_at": "2026-09-18T12:00:00Z",
+    "audit_at": "2026-09-25T12:00:00Z",
+    "request_text": "Please send me a download of all my purchase history and update my billing email, but leave the account active so I can keep placing orders.",
+    "expected_status": "NOT_APPLICABLE",
+    "expected_steps": []
+  },
+  {
+    "case_id": "custom_case_02",
+    "email": "amina.elmasri@gmail.com",
+    "requested_at": "2026-08-19T10:00:00Z",
+    "reported_status": "COMPLETE",
+    "reported_at": "2026-08-20T16:42:00Z",
+    "audit_at": "2026-09-01T12:00:00Z",
+    "request_text": "Hi, I haven't used this account in years and would like it closed. Please remove the profile and the personal details attached to it.",
+    "expected_status": "COMPLETE",
+    "expected_steps": [
+      {
+        "phase": "VERIFICATION",
+        "system_id": "account_service",
+        "resource_id": "account_001",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "evidence_54",
+        "step_no": 1
+      }
+    ]
+  },
+  {
+    "case_id": "custom_case_03",
+    "email": "leila.haddad@yahoo.com",
+    "requested_at": "2026-08-27T08:00:00Z",
+    "reported_status": "COMPLETE",
+    "reported_at": "2026-08-28T09:03:00Z",
+    "audit_at": "2026-09-05T12:00:00Z",
+    "request_text": "Por favor, elimine permanentemente mi cuenta de usuario y todos los datos asociados en sus sistemas.",
+    "expected_status": "INCOMPLETE",
+    "expected_steps": [
+      {
+        "phase": "FINDING",
+        "system_id": "account_service",
+        "resource_id": "account_005",
+        "operation": "REPORT_REMAINING_RECORD",
+        "state": "PRESENT",
+        "evidence_id": "evidence_54",
+        "step_no": 1
+      },
+      {
+        "phase": "REMEDIATION",
+        "system_id": "account_service",
+        "resource_id": "account_005",
+        "operation": "DELETE_RECORD",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 2
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "account_service",
+        "resource_id": "account_005",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 3
+      }
+    ]
+  },
+  {
+    "case_id": "custom_case_04",
+    "email": "jonas.berg@outlook.com",
+    "requested_at": "2026-08-29T06:51:00Z",
+    "reported_status": "PARTIALLY_COMPLETE",
+    "reported_at": "2026-08-30T17:12:00Z",
+    "audit_at": "2026-09-10T09:15:00Z",
+    "request_text": "Bitte l\u00f6schen Sie mein Kundenkonto und alle meine Daten unwiderruflich aus allen Datenbanken und Suchindizes.",
+    "expected_status": "INCOMPLETE",
+    "expected_steps": [
+      {
+        "phase": "FINDING",
+        "system_id": "search_service",
+        "resource_id": "search_001",
+        "operation": "REPORT_REMAINING_RECORD",
+        "state": "PRESENT",
+        "evidence_id": "evidence_57",
+        "step_no": 1
+      },
+      {
+        "phase": "REMEDIATION",
+        "system_id": "search_service",
+        "resource_id": "search_001",
+        "operation": "DELETE_RECORD",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 2
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "account_service",
+        "resource_id": "account_006",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 3
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "search_service",
+        "resource_id": "search_001",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 4
+      }
+    ]
+  },
+  {
+    "case_id": "custom_case_05",
+    "email": "lucas-souza95@gmail.com",
+    "requested_at": "2026-09-02T12:00:00Z",
+    "reported_status": "PARTIALLY_COMPLETE",
+    "reported_at": "2026-09-03T12:00:00Z",
+    "audit_at": "2026-10-01T12:00:00Z",
+    "request_text": "Please erase my account (user_39, user_id > 10) and verify legal retention holds on compliance security logs.",
+    "expected_status": "COMPLETE",
+    "expected_steps": [
+      {
+        "phase": "VERIFICATION",
+        "system_id": "account_service",
+        "resource_id": "account_4051",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "evidence_03",
+        "step_no": 1
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "security_service",
+        "resource_id": "audit_record_7814",
+        "operation": "VERIFY_RECORD_PRESENT",
+        "state": "PRESENT",
+        "evidence_id": "evidence_03",
+        "step_no": 2
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "support_platform",
+        "resource_id": "support_2667",
+        "operation": "VERIFY_RECORD_REDACTED",
+        "state": "REDACTED",
+        "evidence_id": "evidence_03",
+        "step_no": 3
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "analytics_platform",
+        "resource_id": "analytics_6830",
+        "operation": "VERIFY_RECORD_ANONYMIZED",
+        "state": "ANONYMIZED",
+        "evidence_id": "evidence_03",
+        "step_no": 4
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "integration_service",
+        "resource_id": "data_flow_2901",
+        "operation": "VERIFY_DATA_FLOW_DISABLED",
+        "state": "DISABLED",
+        "evidence_id": "evidence_03",
+        "step_no": 5
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "backup_service",
+        "resource_id": "backup_706",
+        "operation": "VERIFY_RESTORE_BLOCKED",
+        "state": "BLOCKED",
+        "evidence_id": "evidence_03",
+        "step_no": 6
+      }
+    ]
+  },
+  {
+    "case_id": "custom_case_06",
+    "email": "k.appiah88@gmail.com",
+    "requested_at": "2026-09-01T04:22:00Z",
+    "reported_status": "NOT_STARTED",
+    "reported_at": "2026-09-01T20:22:00Z",
+    "audit_at": "2026-09-17T09:22:00Z",
+    "request_text": "I am writing to formally request the erasure of my personal data under GDPR Article 17.",
+    "expected_status": "INCOMPLETE",
+    "expected_steps": [
+      {
+        "phase": "FINDING",
+        "system_id": "backup_service",
+        "resource_id": "backup_4978",
+        "operation": "REPORT_RESTORE_RISK",
+        "state": "ACTIVE",
+        "evidence_id": "evidence_93",
+        "step_no": 1
+      },
+      {
+        "phase": "REMEDIATION",
+        "system_id": "backup_service",
+        "resource_id": "backup_4978",
+        "operation": "BLOCK_RESTORE",
+        "state": "BLOCKED",
+        "evidence_id": "",
+        "step_no": 2
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "account_service",
+        "resource_id": "account_3960",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 3
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "security_service",
+        "resource_id": "audit_record_4902",
+        "operation": "VERIFY_RECORD_PRESENT",
+        "state": "PRESENT",
+        "evidence_id": "",
+        "step_no": 4
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "backup_service",
+        "resource_id": "backup_4978",
+        "operation": "VERIFY_RESTORE_BLOCKED",
+        "state": "BLOCKED",
+        "evidence_id": "",
+        "step_no": 5
+      }
+    ]
+  },
+  {
+    "case_id": "custom_case_07",
+    "email": "darwish.omar@icloud.com",
+    "requested_at": "2026-09-05T08:14:00Z",
+    "reported_status": "NOT_STARTED",
+    "reported_at": "2026-09-05T20:14:00Z",
+    "audit_at": "2026-09-17T09:14:00Z",
+    "request_text": "Please delete all account and telemetry profile records belonging to my email.",
+    "expected_status": "INCOMPLETE",
+    "expected_steps": [
+      {
+        "phase": "FINDING",
+        "system_id": "search_service",
+        "resource_id": "search_4639",
+        "operation": "REPORT_REMAINING_RECORD",
+        "state": "PRESENT",
+        "evidence_id": "evidence_01",
+        "step_no": 1
+      },
+      {
+        "phase": "FINDING",
+        "system_id": "analytics_platform",
+        "resource_id": "analytics_7438",
+        "operation": "REPORT_EXPOSED_PII",
+        "state": "PRESENT",
+        "evidence_id": "evidence_01",
+        "step_no": 2
+      },
+      {
+        "phase": "REMEDIATION",
+        "system_id": "search_service",
+        "resource_id": "search_4639",
+        "operation": "DELETE_RECORD",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 3
+      },
+      {
+        "phase": "REMEDIATION",
+        "system_id": "analytics_platform",
+        "resource_id": "analytics_7438",
+        "operation": "ANONYMIZE_RECORD",
+        "state": "ANONYMIZED",
+        "evidence_id": "",
+        "step_no": 4
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "account_service",
+        "resource_id": "account_3270",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 5
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "search_service",
+        "resource_id": "search_4639",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 6
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "security_service",
+        "resource_id": "audit_record_5080",
+        "operation": "VERIFY_RECORD_PRESENT",
+        "state": "PRESENT",
+        "evidence_id": "",
+        "step_no": 7
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "analytics_platform",
+        "resource_id": "analytics_7438",
+        "operation": "VERIFY_RECORD_ANONYMIZED",
+        "state": "ANONYMIZED",
+        "evidence_id": "",
+        "step_no": 8
+      }
+    ]
+  },
+  {
+    "case_id": "custom_case_08",
+    "email": "e.varga90@yahoo.com",
+    "requested_at": "2026-08-17T12:00:00Z",
+    "reported_status": "PARTIALLY_COMPLETE",
+    "reported_at": "2026-08-19T12:00:00Z",
+    "audit_at": "2026-09-15T12:00:00Z",
+    "request_text": "Please delete my profile and redact any customer service conversations.",
+    "expected_status": "INCOMPLETE",
+    "expected_steps": [
+      {
+        "phase": "FINDING",
+        "system_id": "search_service",
+        "resource_id": "search_6083",
+        "operation": "REPORT_REMAINING_RECORD",
+        "state": "PRESENT",
+        "evidence_id": "evidence_01",
+        "step_no": 1
+      },
+      {
+        "phase": "FINDING",
+        "system_id": "support_platform",
+        "resource_id": "support_9553",
+        "operation": "REPORT_EXPOSED_PII",
+        "state": "PRESENT",
+        "evidence_id": "evidence_01",
+        "step_no": 2
+      },
+      {
+        "phase": "REMEDIATION",
+        "system_id": "search_service",
+        "resource_id": "search_6083",
+        "operation": "DELETE_RECORD",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 3
+      },
+      {
+        "phase": "REMEDIATION",
+        "system_id": "support_platform",
+        "resource_id": "support_9553",
+        "operation": "REDACT_RECORD",
+        "state": "REDACTED",
+        "evidence_id": "",
+        "step_no": 4
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "account_service",
+        "resource_id": "account_9102",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 5
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "search_service",
+        "resource_id": "search_6083",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 6
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "security_service",
+        "resource_id": "audit_record_6793",
+        "operation": "VERIFY_RECORD_PRESENT",
+        "state": "PRESENT",
+        "evidence_id": "",
+        "step_no": 7
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "support_platform",
+        "resource_id": "support_9553",
+        "operation": "VERIFY_RECORD_REDACTED",
+        "state": "REDACTED",
+        "evidence_id": "",
+        "step_no": 8
+      }
+    ]
+  },
+  {
+    "case_id": "custom_case_09",
+    "email": "minjun.kim@gmail.com",
+    "requested_at": "2026-08-24T12:00:00Z",
+    "reported_status": "COMPLETE",
+    "reported_at": "2026-08-25T12:00:00Z",
+    "audit_at": "2026-09-15T12:00:00Z",
+    "request_text": "\uacc4\uc815\uacfc \uad00\ub828\ub41c \ubaa8\ub4e0 \uac1c\uc778\uc815\ubcf4\ub97c \uc0ad\uc81c\ud574 \uc8fc\uc2ed\uc2dc\uc624. (Please delete all personal data).",
+    "expected_status": "INCOMPLETE",
+    "expected_steps": [
+      {
+        "phase": "FINDING",
+        "system_id": "analytics_platform",
+        "resource_id": "analytics_9914",
+        "operation": "REPORT_REMAINING_RECORD",
+        "state": "PRESENT",
+        "evidence_id": "evidence_01",
+        "step_no": 1
+      },
+      {
+        "phase": "REMEDIATION",
+        "system_id": "analytics_platform",
+        "resource_id": "analytics_9914",
+        "operation": "DELETE_RECORD",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 2
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "account_service",
+        "resource_id": "account_9797",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 3
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "analytics_platform",
+        "resource_id": "analytics_9914",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 4
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "security_service",
+        "resource_id": "audit_record_2945",
+        "operation": "VERIFY_RECORD_PRESENT",
+        "state": "PRESENT",
+        "evidence_id": "",
+        "step_no": 5
+      }
+    ]
+  },
+  {
+    "case_id": "custom_case_10",
+    "email": "thandiwe.m6866@zoho.com",
+    "requested_at": "2026-09-06T08:00:00Z",
+    "reported_status": "NOT_STARTED",
+    "reported_at": "2026-09-06T18:00:00Z",
+    "audit_at": "2026-09-17T09:00:00Z",
+    "request_text": "Please erase my account, including any previous email addresses and hashes.",
+    "expected_status": "INCOMPLETE",
+    "expected_steps": [
+      {
+        "phase": "FINDING",
+        "system_id": "export_service",
+        "resource_id": "export_7364",
+        "operation": "REPORT_REMAINING_RECORD",
+        "state": "PRESENT",
+        "evidence_id": "evidence_92",
+        "step_no": 1
+      },
+      {
+        "phase": "FINDING",
+        "system_id": "search_service",
+        "resource_id": "search_898",
+        "operation": "REPORT_REMAINING_RECORD",
+        "state": "PRESENT",
+        "evidence_id": "evidence_92",
+        "step_no": 2
+      },
+      {
+        "phase": "REMEDIATION",
+        "system_id": "export_service",
+        "resource_id": "export_7364",
+        "operation": "DELETE_RECORD",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 3
+      },
+      {
+        "phase": "REMEDIATION",
+        "system_id": "search_service",
+        "resource_id": "search_898",
+        "operation": "DELETE_RECORD",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 4
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "account_service",
+        "resource_id": "account_410",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 5
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "export_service",
+        "resource_id": "export_7364",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 6
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "search_service",
+        "resource_id": "search_898",
+        "operation": "VERIFY_RECORD_ABSENT",
+        "state": "ABSENT",
+        "evidence_id": "",
+        "step_no": 7
+      },
+      {
+        "phase": "VERIFICATION",
+        "system_id": "security_service",
+        "resource_id": "audit_record_4128",
+        "operation": "VERIFY_RECORD_PRESENT",
+        "state": "PRESENT",
+        "evidence_id": "",
+        "step_no": 8
+      }
+    ]
+  },
+  {
+    "case_id": "custom_case_11",
+    "email": "marketing.unsubscribe@example.com",
+    "requested_at": "2026-09-18T10:00:00Z",
+    "reported_status": "NOT_STARTED",
+    "reported_at": "2026-09-18T12:00:00Z",
+    "audit_at": "2026-09-25T12:00:00Z",
+    "request_text": "Please stop sending me marketing emails. I still use the store and need my account open.",
+    "expected_status": "NOT_APPLICABLE",
+    "expected_steps": []
+  }
+]
